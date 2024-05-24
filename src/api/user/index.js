@@ -1,7 +1,11 @@
 import axios from "@/lib/axios";
 
-export const getAllUser = async (take, page) => {
-  const response = await axios.get(`/users?page=1&per_page=25`);
+export const getAllUser = async () => {
+  const response = await axios.get(`/users`);
+  return response;
+};
+export const getOneUser = async (id) => {
+  const response = await axios.get(`/users/${id}`);
   return response;
 };
 // export const postBank = async (data) => {

@@ -82,8 +82,8 @@ export default function UserPage() {
               Personal details
             </Typography>
             {personalDetail?.map((item, index) => (
-              <div className="flex flex-col gap-4">
-                <div key={index} className="flex ">
+              <div key={index} className="flex flex-col gap-4">
+                <div  className="flex ">
                   <Typography variant="body" className=" w-[200px]">
                     {item.title}
                   </Typography>

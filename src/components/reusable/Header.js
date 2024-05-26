@@ -18,7 +18,7 @@ export default function Headers() {
     },
     {
       title: "Dashboard",
-      link: `/${id}/details`,
+      link: `/${id}/dashboard`,
     },
   ];
   return (

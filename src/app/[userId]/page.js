@@ -76,14 +76,17 @@ export default function UserPage() {
           <IoChevronForward />
           <Typography variant="body">{userData?.username}</Typography>
         </div>
+        <Typography variant="title" className="mt-[20px]">
+          Personal details
+        </Typography>
         <div className="mt-[20px]">
           <Card className="sm:w-1/2 w-full">
-            <Typography variant="body" className=" font-bold">
+            {/* <Typography variant="body" className=" font-bold">
               Personal details
-            </Typography>
+            </Typography> */}
             {personalDetail?.map((item, index) => (
               <div key={index} className="flex flex-col gap-4">
-                <div  className="flex ">
+                <div className="flex ">
                   <Typography variant="body" className=" w-[200px]">
                     {item.title}
                   </Typography>

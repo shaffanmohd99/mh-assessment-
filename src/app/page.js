@@ -14,8 +14,6 @@ export default function Home() {
   });
   const userData = data?.data;
 
-  const router = useRouter();
-
   const columns = [
     {
       accessorKey: "id",
@@ -45,16 +43,18 @@ export default function Home() {
       },
     },
   ];
-  if (isLoading) {
-    return <div>is laoding</div>;
-  } else {
-    return (
-      <div>
-        <Typography variant="title">User List</Typography>
-        <div className="mt-[50px]">
-          <DataTable columns={columns} data={userData} />
-        </div>
+
+  return (
+    <div>
+      <Typography variant="title">User List</Typography>
+      <div className="mt-[50px]">
+        <DataTable
+          columns={columns}
+          data={userData}
+          isError={isError}
+          isLoading={isLoading}
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }

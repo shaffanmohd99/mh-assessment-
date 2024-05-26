@@ -27,7 +27,7 @@ export default function PostDetailDialog({
   return (
     <Dialog open={open}>
       <DialogContent
-        className="w-full  overflow-y-auto max-h-screen overflow-x-hidden"
+        className="w-full py-8  overflow-y-auto max-h-[90%] overflow-x-hidden"
         handleClose={handleClose}
       >
         {isLoading ? (

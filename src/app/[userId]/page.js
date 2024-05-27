@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { IoChevronForward } from "react-icons/io5";
+import BreadCrumb from "./component/BreadCrumb";
 
 export default function UserPage() {
   const params = useParams();
@@ -64,17 +65,8 @@ export default function UserPage() {
   } else {
     return (
       <div>
-        <div className="flex gap-3 items-center">
-          <Link href="/">
-            <Typography
-              variant="body"
-              className="cursor-pointer text-slate-600 hover:underline"
-            >
-              User list
-            </Typography>
-          </Link>
-          <IoChevronForward />
-          <Typography variant="body">{userData?.username}</Typography>
+        <div>
+          <BreadCrumb />
         </div>
         <Typography variant="title" className="mt-[20px]">
           Personal details

@@ -20,6 +20,10 @@ export default function Headers() {
       title: "Dashboard",
       link: `/${id}/dashboard`,
     },
+    {
+      title: "Todo",
+      link: `/${id}/todo`,
+    },
   ];
   return (
     <header className="fixed  top-0 left-0 right-0 bg-slate-600 h-16 border-b border-red-700 flex items-center justify-between px-[20px] sm:px-8 z-[99] ">

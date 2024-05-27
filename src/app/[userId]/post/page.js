@@ -9,6 +9,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import PostDetailDialog from "./component/PostDetailDialog";
 import { useState } from "react";
+import BreadCrumb from "../component/BreadCrumb";
 
 export default function PostPage() {
   const params = useParams();
@@ -57,17 +58,8 @@ export default function PostPage() {
   ];
   return (
     <div>
-      <div className="flex gap-3 items-center">
-        <Link href="/">
-          <Typography
-            variant="body"
-            className="cursor-pointer text-slate-600 hover:underline"
-          >
-            User list
-          </Typography>
-        </Link>
-        <IoChevronForward />
-        <Typography variant="body">name create context post list</Typography>
+      <div>
+        <BreadCrumb />
       </div>
       <Typography variant="title" className="mt-[20px]">
         Post List

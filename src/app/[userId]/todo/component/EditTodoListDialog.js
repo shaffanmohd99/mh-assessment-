@@ -17,7 +17,7 @@ export default function EditTodoListDialog({ handleClose, open, type }) {
   const mutateData = { completed: type?.value };
 
   const queryClient = useQueryClient();
-  const { mutate: editMutate, isLoading: editLoading } = useMutation({
+  const { mutate: editMutate, isPending: editLoading } = useMutation({
     mutationFn: (value) => editTodo(todoId, value),
     onSuccess: async (response) => {
       console.log("🚀 edit successfull", response);
@@ -29,7 +29,7 @@ export default function EditTodoListDialog({ handleClose, open, type }) {
     },
   });
 
-  const { mutate: deleteMutate, isLoading: deleteLoading } = useMutation({
+  const { mutate: deleteMutate, isPending: deleteLoading } = useMutation({
     mutationFn: () => deleteTodo(todoId),
     onSuccess: async (response) => {
       console.log("🚀delete successful", response);

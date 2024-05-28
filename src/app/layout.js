@@ -16,15 +16,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ProgresssBarProvider>
         <body className={inter.className}>
-          <UserDetailContext>
-            <ReactQueryProvider>
+          <ReactQueryProvider>
+            <UserDetailContext>
               <div className="flex items-center justify-center w-full">
                 <div className="mt-[64px] w-full max-w-6xl min-h-[calc(100vh-64px)] p-4">
                   {children}
                 </div>
               </div>
-            </ReactQueryProvider>
-          </UserDetailContext>
+            </UserDetailContext>
+          </ReactQueryProvider>
         </body>
       </ProgresssBarProvider>
     </html>

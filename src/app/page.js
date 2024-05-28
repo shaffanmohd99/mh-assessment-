@@ -6,8 +6,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
-import { useContext } from "react";
-import { UserContext } from "@/context/UserDetailContext";
 
 export default function Home() {
   const { data, isLoading, isError } = useQuery({
@@ -15,8 +13,6 @@ export default function Home() {
     queryFn: () => getAllUser(),
   });
   const userData = data?.data;
-
-  const { setName } = useContext(UserContext);
 
   const columns = [
     {
@@ -38,7 +34,6 @@ export default function Home() {
       cell: ({ row }) => {
         return (
           <Link
-            onClick={() => setName(row.original.name)}
             href={`/${row.original.id}`}
             className="flex justify-end cursor-pointer text-slate-600 hover:text-slate-900"
           >

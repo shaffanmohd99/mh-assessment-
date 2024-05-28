@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 
 export default function AddTodoListDialog({ handleClose, open }) {
   const queryClient = useQueryClient();
-  const { mutate, isLoading } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: (value) => addTodo(value),
     onSuccess: async (response) => {
       console.log("🚀 add successfull", response);
@@ -71,7 +71,7 @@ export default function AddTodoListDialog({ handleClose, open }) {
         </DialogHeader>
         <div className="flex gap-4 justify-center w-full ">
           <Button className="w-1/2" onClick={handleSubmit(onSubmit)}>
-            {isLoading ? (
+            {isPending ? (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             ) : (
               "Confirm"
